@@ -86,7 +86,9 @@ namespace BankingApp
             }
             else
             // Handle insufficient fund
-                if (amountTransfer > fromBalance)
+            //1ST CHANGE MADE ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                if (((fromRadioButtonChecked == "InvestmentRadioButtonOn") && (amountTransfer + 30.0m > fromBalance)) ||
+                ((fromRadioButtonChecked == "SavingRadioButtonOn") && (amountTransfer > fromBalance)))
                 {
                     MessageBox.Show("Error! You have insufficient fund. Enter another amount");
                     Keyboard.Focus(amountTextBox);
